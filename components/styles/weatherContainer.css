@@ -1,0 +1,54 @@
+.container{
+    
+    width: 100%;
+    background: linear-gradient(to right, #AD36CB 10%, #333333  );
+    filter: drop-shadow(1px 3px 3px #cecdcd);
+    backdrop-filter: blur(100px);
+    gap: 30px;
+    border-radius: 30px;
+    border: none;
+    color: #F2F1F1 ;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 90px;
+    margin-right: 20px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    width: 500px;
+
+}
+
+.box h1{
+    font-size: 20px;
+}
+
+.box h2{
+    font-size: 14px;
+}
+
+.box h3{
+    font-size: 13px;
+}
+
+
+.box img{
+    height: 40px;
+    width: 30px;
+}
+
+
+.forecast{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
