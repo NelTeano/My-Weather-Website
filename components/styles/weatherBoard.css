@@ -1,0 +1,163 @@
+.board-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0b131e;
+    height: 1200px;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 30px;
+
+}
+
+.weatherBoard{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 60%;
+}
+
+.locationBoard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: transparent;
+    color: white;
+}
+
+.locationBoard img{
+    height: 200px;
+    width: 200px;
+}
+
+.forecastBoard{
+    display: flex;
+    flex-direction: column;
+    background-color: #202b3b;
+    border-radius: 30px;
+    padding: 20px;
+    color: #9399a2;
+    margin-left: 10%;
+}
+
+.forecastBoard h1{
+    color: white;
+}
+
+.forecastTime{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.forecastTime div{
+    border-left: solid #485468 1px;
+    padding: 0px 0px 0px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.airconditionBoard{
+    display: flex;
+    flex-direction: column;
+    color: #9399a2;
+    background-color: #202b3b;
+    border-radius: 30px;
+    padding: 20px 10px 40px 30px;
+    margin-left: 10%;
+    gap: 30px;
+}
+
+
+.airCondition{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.conditionDetails{
+    display: flex;
+    
+}
+
+.conditionDetails h1{
+    text-align: right;
+    font-size: 30px;
+    color: white;
+    margin-right: 10px;
+    
+}
+
+.conditionDetails h2{
+    font-size: 19px;
+}
+.conditionDetails div{
+    display: flex;
+    flex-direction: column;
+}
+
+.bi-wind, .bi-brightness-high-fill, .bi-droplet-half, .bi-thermometer-half{
+    height: 30px;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* PER DAYS BOARD */
+
+
+
+.perDaysBoard{
+    background-color: transparent;
+    width: 40%;
+    height: 100%;
+}
+
+.daysForecast{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+    left: 30px;
+    background-color: #202b3b;
+    height: 80%;
+    width: 90%;
+    border-radius: 30px;
+    
+    
+}
+
+.daysForecast h2{
+    color: #9399a2;
+}
+
+.daysForecast img{
+    height: 100px;
+}
+
+.daysForecast div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+    color: #9399a2;
+    padding: 5px;
+    width: 80%;
+}
+
+.daysForecastBox{
+    border-bottom: solid #485468 1px;
+}
+

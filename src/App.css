@@ -8,12 +8,7 @@
 }
 
 body{
-  margin: 0;
-  padding: 0;
   background-color: #252323;
-  display: flex;
-  flex-direction: column;
-  
 }
 
 .regions {
