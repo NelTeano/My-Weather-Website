@@ -29,30 +29,34 @@ export default function weatherBoard({
     eveningIcon,
     tonightIcon,
 
-    // PER DAY FORECAST
-    monday,
-    tuesday,
-    wednesday,
-    thursday,
-    friday,
-    sat,
-    sunday,
-    
-    mondayCondition,
-    tuesdayCondition,
-    wednesdayCondition,
-    thursdayCondition,
-    fridayCondition,
-    satCondition,
-    sundayCondition, 
+    // AIR CONDITIONS 
+    reelFeel,
+    uvIndex,
+    wind, 
 
-    mondayIcon,
-    tuesdayIcon,
-    wednesdayIcon,
-    thursdayIcon,
-    fridayIcon,
-    satIcon,
-    sundayIcon,
+    // PER DAY FORECAST
+    day1,
+    day2,
+    day3,
+    day4,
+    day5,
+    day6,
+    
+    day1Condition,
+    day2Condition,
+    day3Condition,
+    day4Condition,
+    day5Condition,
+    day6Condition,
+
+    day1Icon,
+    day2Icon,
+    day3Icon,
+    day4Icon,
+    day5Icon,
+    day6Icon
+
+    
 
 }) 
 
@@ -71,14 +75,14 @@ export default function weatherBoard({
                                     marginTop: '40px',
                                     fontSize: '40px'
                             }}>
-                        Madrid</h2>
-                        <p>Chance of Rain 20%</p>
+                        {location}</h2>
+                        <p>Chance of Rain {chance}%</p>
                         <h1 
                             style={{
                                 marginTop: '40px',
                                 fontSize: '70px'
                             }}>
-                        31°</h1>
+                        {celcius}°</h1>
                     </div>
                     <div>
                         <img src={icon}></img>
@@ -88,29 +92,29 @@ export default function weatherBoard({
                     <h3>TODAY'S FORECAST</h3>
                     <div className='forecastTime'>
                         <div >
-                            <h3>6:00 AM</h3>
-                            <img src={icon}></img>
-                            <h1>31°</h1>
+                            <h3>{morning}</h3>
+                            <img src={morningIcon}></img>
+                            <h1>{morningCelcius}°</h1>
                         </div>
                         <div>
-                            <h3>6:00 AM</h3>
-                            <img src={icon}></img>
-                            <h1>31°</h1>
+                            <h3>{sunrise}</h3>
+                            <img src={sunriseIcon}></img>
+                            <h1>{sunriseCelcius}°</h1>
                         </div>
                         <div>
-                            <h3>6:00 PM</h3>
-                            <img src={icon}></img>
-                            <h1>31°</h1>
+                            <h3>{noon}</h3>
+                            <img src={noonIcon}></img>
+                            <h1>{noonCelcius}°</h1>
                         </div>
                         <div>
-                            <h3>6:00 PM</h3>
-                            <img src={icon}></img>
-                            <h1>31°</h1>
+                            <h3>{evening}</h3>
+                            <img src={eveningIcon}></img>
+                            <h1>{eveningCelcius}°</h1>
                         </div>
                         <div>
-                            <h3>6:00 PM</h3>
-                            <img src={icon}></img>
-                            <h1>31°</h1>
+                            <h3>{tonight}</h3>
+                            <img src={tonightIcon}></img>
+                            <h1>{tonightCelcius}°</h1>
                         </div>
                     </div>
                 </div>
@@ -126,7 +130,7 @@ export default function weatherBoard({
                                     </svg>
                                     Reel Feel
                                 </h2>
-                                <h1>30°</h1>
+                                <h1>{reelFeel}°</h1>
                             </div>
                             <div style={{marginLeft: '38%'}}>
                                 <h2>
@@ -135,7 +139,7 @@ export default function weatherBoard({
                                     </svg>
                                     Wind
                                 </h2>
-                                <h1>0.2 km/h</h1>
+                                <h1>{wind} km/h</h1>
                             </div>
                         </div>
                         <div className='conditionDetails'>
@@ -147,7 +151,7 @@ export default function weatherBoard({
                                     </svg>
                                     Chance of Rain
                                 </h2>
-                                <h1>0%</h1>
+                                <h1>{chance}%</h1>
                             </div>
                             <div style={{marginLeft: '30%'}}>
                                 <h2>
@@ -156,7 +160,7 @@ export default function weatherBoard({
                                     </svg>
                                     UV Index
                                 </h2>
-                                <h1>3</h1>
+                                <h1>{uvIndex}</h1>
                             </div>
                         </div>
                     </div>
@@ -175,45 +179,45 @@ export default function weatherBoard({
                             </div>
                         </div>
                         <div className='daysForecastBox'>
-                            <p>Tuesday</p>
+                            <p>{day1}</p>
                             <div style={{marginLeft: '30%'}}>
-                                <img src={icon}></img>
-                                <h3>Morning</h3>
+                                <img src={day1Icon}></img>
+                                <h3>{day1Condition}</h3>
                             </div>
                         </div>
                         <div className='daysForecastBox'>
-                            <p>Wednesday</p>
+                            <p>{day2}</p>
                             <div style={{marginLeft: '30%'}}>
-                                <img src={icon}></img>
-                                <h3>Morning</h3>
+                                <img src={day2Icon}></img>
+                                <h3>{day2Condition}</h3>
                             </div>
                         </div>
                         <div className='daysForecastBox'>
-                            <p>Thursday</p>
+                            <p>{day3}</p>
                             <div style={{marginLeft: '30%'}}>
-                                <img src={icon}></img>
-                                <h3>Morning</h3>
+                                <img src={day3Icon}></img>
+                                <h3>{day3Condition}</h3>
                             </div>
                         </div>
                         <div className='daysForecastBox'>
-                            <p>Friday</p>
+                            <p>{day4}</p>
                             <div style={{marginLeft: '30%'}}>
-                                <img src={icon}></img>
-                                <h3>Morning</h3>
+                                <img src={day4Icon}></img>
+                                <h3>{day4Condition}</h3>
                             </div>
                         </div>
                         <div className='daysForecastBox'>
-                            <p>Saturday</p>
+                            <p>{day5}</p>
                             <div style={{marginLeft: '30%'}}>
-                                <img src={icon}></img>
-                                <h3>Morning</h3>
+                                <img src={day5Icon}></img>
+                                <h3>{day5Condition}</h3>
                             </div>
                         </div>
                         <div style={{border: 'none'}} className='daysForecastBox'>
-                            <p>Sunday</p>
+                            <p>{day6}</p>
                             <div style={{marginLeft: '30%'}}>
-                                <img src={icon}></img>
-                                <h3>Morning</h3>
+                                <img src={day6Icon}></img>
+                                <h3>{day6Condition}</h3>
                             </div>
                         </div>
                     </div>
