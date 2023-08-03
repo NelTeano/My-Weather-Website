@@ -8,20 +8,99 @@
 }
 
 body{
-  background-color: #252323;
+  background-color: #0b131e;
 }
 
 .regions {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: #202b3b;
   width: 80%;
   margin: auto;
   border: none;
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
+  border-radius: 30px;
+  margin-top: 30px;
 }
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-top: 100px;
+}
+
+.search h3{
+  color: white;
+  font-size: 24px;
+  margin-right: 30px;
+}
+
+.search input{
+  width: 40%;
+  height: 70px;
+  padding: 20px;
+  border-radius: 30px;
+  border: solid white 1px;
+  background-color: #202b3b;
+  color: white;
+  font-size: 20px;
+}
+
+.search button{
+  height: 70px;
+  width: 10%;
+  border-radius: 30px ;
+  margin-left: 20px;
+  font-size: 19px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #202b3b;
+  border: white solid 1px;
+  color: white;
+}
+
+.search button:hover{
+  background-color: white;
+  color: #202b3b;
+}
+
+
+
+.regions::-webkit-scrollbar {
+  width: 10px;
+  
+}
+.regions::-webkit-scrollbar-track {
+  background: transparent; 
+}
+.regions::-webkit-scrollbar-thumb {
+  background: rgb(116, 114, 114); 
+  border-radius: 30px;
+  
+}
+
+
+
+body::-webkit-scrollbar {
+  width: 10px;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202b3b; 
+}
+ 
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+
 
 
 

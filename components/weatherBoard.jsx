@@ -215,7 +215,7 @@ export default function weatherBoard({
                         </div>
                         <div style={{border: 'none'}} className='daysForecastBox'>
                             <p>{day6}</p>
-                            <div style={{marginLeft: '30%'}}>
+                            <div style={{marginLeft: '25%'}}>
                                 <img src={day6Icon}></img>
                                 <h3>{day6Condition}</h3>
                             </div>

@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: center;
     background-color: #0b131e;
+    filter: drop-shadow(1px 3px 6px #faf6f6);
     height: 1200px;
     width: 100%;
     margin-top: 30px;

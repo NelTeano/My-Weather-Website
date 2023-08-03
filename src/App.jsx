@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect  } from 'react';
 import axios from 'axios';
 import './App.css'
 import Weather from '../components/weatherContainer'
@@ -8,12 +8,28 @@ import Board from '../components/weatherBoard'
 
 
 export default function App() {
+
   
+  
+
+  // SEARCH VAR HANDLER
+  const [location, setLocation] = useState('Philippines');
+
+  
+
+  const handleInputChange = (event) => {
+    setLocation(event.target.value);
+  };
+
+
   const apiKey = 'e3048c143d6e444baad63508233107';
   const PHapi = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Philippines&aqi=no`;
   const LondonAPI = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=London&days=5&aqi=yes&alerts=no`;
   const CanadaAPI =`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Canada&days=5&aqi=yes&alerts=no`
-  const weatherBoardAPI = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Batangas&days=10&aqi=yes&alerts=no`;
+  var weatherBoardAPI = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=10&aqi=yes&alerts=no`;
+  
+  
+  
 
 
 
@@ -65,7 +81,7 @@ export default function App() {
       });
 
       
-  }, []);
+  }, [location]);
 
 
   
@@ -109,14 +125,14 @@ export default function App() {
     },
   };
   
-  // Function to get the day name from a date string (e.g., "2023-08-02" -> "Monday")
+  // FUNCTION CONVERTS THE DATES TO DAYS RECEIVE FROM API 
   function getDayName(dateString) {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const date = new Date(dateString);
     return days[date.getDay()];
   }
   
-  // Loop through the forecast data and update the date with the corresponding day name
+  // MAP FUNCTION GETTING EVERY DATE DATA IN API
   var updatedForecastData = forecastData.forecast.forecastday.map((entry) => {
     return {
       ...entry,
@@ -124,15 +140,10 @@ export default function App() {
     };
   });
   
-  // Display the forecast data with day names
-  console.log(updatedForecastData)
+  
 
 
-
-
-
-
-
+  // OBJECT GIVING DATA TO BOARD COMPONENT
   const boardData = {
     location: boardWeather.location.name,
     icon: boardWeather.current.condition.icon,
@@ -191,8 +202,12 @@ export default function App() {
 
   }
 
-
+  // TESTING THE VALUES OF BOARD DATA OBJECT
   console.log(boardData)
+  
+
+
+
 
   
   
@@ -203,9 +218,13 @@ export default function App() {
     <>
 
     <h1 style={{
-      marginTop: '20px'
+      marginTop: '20px',
+      color: 'white',
+      marginLeft: '200px'
     }} className='regionsTitle'>COUNTRY & CAPITALS</h1>
-      
+
+
+
     <div className='regions'>
       <Weather 
         // LOCATION INFORMATION
@@ -277,65 +296,71 @@ export default function App() {
       ></Weather>
     </div>
     
-      
+
+
+      <div className='search'>
+        <h3>Search Location :</h3>
+        <input  onChange={handleInputChange} type="text" placeholder='Country / Province / City Name ( ex. Phillipines , Cavite or General Trias)'/>
+      </div>
+
+
+
       <div>
         <Board 
-    location={boardData.location}
-    icon={boardData.icon}
-    celcius={boardData.celcius}
-    chance={boardData.chance}
-
-
-    // PER HOUR WEATHER
-    morning={boardData.morning}
-    sunrise={boardData.sunrise}
-    noon={boardData.noon}
-    evening={boardData.evening}
-    tonight={boardData.tonight}
-
-    //PER CELSIUS
-    morningCelcius={boardData.morningCelcius}
-    sunriseCelcius={boardData.sunriseCelcius}
-    noonCelcius={boardData.noonCelcius}
-    eveningCelcius={boardData.eveningCelcius}
-    tonightCelcius={boardData.tonightCelcius}
-
-    // PER HOUR ICONS
-    morningIcon={boardData.morningIcon}
-    sunriseIcon={boardData.sunriseIcon}
-    noonIcon={boardData.noonIcon}
-    eveningIcon={boardData.eveningIcon}
-    tonightIcon={boardData.tonightIcon}
-
-    // AIR CONDITIONS 
-    reelFeel={boardData.reelFeel}
-    uvIndex={boardData.uvIndex}
-    wind={boardData.wind}
-
-    // PER DAY FORECAST
-    day1={boardData.day1}
-    day2={boardData.day2}
-    day3={boardData.day3}
-    day4={boardData.day4}
-    day5={boardData.day5}
-    day6={boardData.day6}
-    
-    
-    day1Icon={boardData.day1Icon}    
-    day2Icon={boardData.day2Icon}
-    day3Icon={boardData.day3Icon}
-    day4Icon={boardData.day4Icon}
-    day5Icon={boardData.day5Icon}
-    day6Icon={boardData.day6Icon}
-
-    day1Condition={boardData.day1Condition}
-    day2Condition={boardData.day2Condition}
-    day3Condition={boardData.day3Condition}
-    day4Condition={boardData.day4Condition}
-    day5Condition={boardData.day5Condition}
-    day6Condition={boardData.day6Condition}
-
-
+            location={boardData.location}
+            icon={boardData.icon}
+            celcius={boardData.celcius}
+            chance={boardData.chance}
+          
+          
+            // PER HOUR WEATHER
+            morning={boardData.morning}
+            sunrise={boardData.sunrise}
+            noon={boardData.noon}
+            evening={boardData.evening}
+            tonight={boardData.tonight}
+          
+            //PER CELSIUS
+            morningCelcius={boardData.morningCelcius}
+            sunriseCelcius={boardData.sunriseCelcius}
+            noonCelcius={boardData.noonCelcius}
+            eveningCelcius={boardData.eveningCelcius}
+            tonightCelcius={boardData.tonightCelcius}
+          
+            // PER HOUR ICONS
+            morningIcon={boardData.morningIcon}
+            sunriseIcon={boardData.sunriseIcon}
+            noonIcon={boardData.noonIcon}
+            eveningIcon={boardData.eveningIcon}
+            tonightIcon={boardData.tonightIcon}
+          
+            // AIR CONDITIONS 
+            reelFeel={boardData.reelFeel}
+            uvIndex={boardData.uvIndex}
+            wind={boardData.wind}
+          
+            // PER DAY FORECAST
+            day1={boardData.day1}
+            day2={boardData.day2}
+            day3={boardData.day3}
+            day4={boardData.day4}
+            day5={boardData.day5}
+            day6={boardData.day6}
+            
+            
+            day1Icon={boardData.day1Icon}    
+            day2Icon={boardData.day2Icon}
+            day3Icon={boardData.day3Icon}
+            day4Icon={boardData.day4Icon}
+            day5Icon={boardData.day5Icon}
+            day6Icon={boardData.day6Icon}
+          
+            day1Condition={boardData.day1Condition}
+            day2Condition={boardData.day2Condition}
+            day3Condition={boardData.day3Condition}
+            day4Condition={boardData.day4Condition}
+            day5Condition={boardData.day5Condition}
+            day6Condition={boardData.day6Condition}
         ></Board>
       </div>
 
